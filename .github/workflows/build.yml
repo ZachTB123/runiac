@@ -1,4 +1,4 @@
-name: buildcontainers
+name: build
 on:
   push:
     branches:
