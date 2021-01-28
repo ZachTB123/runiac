@@ -1,6 +1,8 @@
 
-
 # runiac - Run IaC Anywhere With Ease
+
+![build](https://github.com/optum/runiac/workflows/build/badge.svg?branch=main)
+
 
 ![](./logo.jpg)
 
