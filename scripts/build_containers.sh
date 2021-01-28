@@ -2,6 +2,14 @@
 
 # Build builder images
 
+push=false
+
+if [ "$1" == "--push"  ]
+then
+  echo "Will push to dockerhub...."
+  push=true
+fi
+
 rm -rf ./reports
 outputVolume=$(docker volume create)
 DOCKER_BUILDKIT=1 docker build -f "build/package/alpine-builder/Dockerfile" -t "runiac:alpine-builder" . || exit 1;
@@ -20,8 +28,24 @@ for d in build/package/*/ ; do
 
   echo "$d"
   dir="${d%/*}"
-  tag=${dir##*/}
-  DOCKER_BUILDKIT=1 docker build -f "$d/Dockerfile" -t "runiac:$tag" . &
+  cleanDir=${dir##*/}
+
+  # if not in github actions, set to local default
+  if [ -z "$GITHUB_REF"  ]
+  then
+    GITHUB_REF=$(whoami)
+  fi
+
+  image="runiac:$GITHUB_REF-$cleanDir"
+  DOCKER_BUILDKIT=1 docker build -f "$d/Dockerfile" -t "$image" . &
+
+  if [ "$push" == "true"  ]
+  then
+    echo "pushing..."
+    docker tag "$image" "optumopensource/$image"
+    docker push "optumopensource/$image"
+  fi
+
 done
 
 wait
