@@ -2,6 +2,7 @@
 # runiac - Run IaC Anywhere With Ease
 
 ![build](https://github.com/optum/runiac/workflows/build/badge.svg?branch=main)
+<a href="https://cla-assistant.io/Optum/barista"><img src="https://cla-assistant.io/readme/badge/Optum/barista" alt="CLA assistant" /></a>
 
 
 ![](./logo.jpg)
