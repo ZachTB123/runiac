@@ -41,7 +41,6 @@ func TestMain(m *testing.M) {
 
 func TestFlushTracks_ShouldReturnCorrectSuccessesWithMultipleTracks(t *testing.T) {
 	var mockedInput = map[int]interface{}{}
-	var executedInvokeCount int
 
 	stubTrackPrefix := "track"
 	stubStepPrefix := "step"
@@ -129,7 +128,6 @@ func TestFlushTrack_ShouldReportAllStepsInSingleTrack(t *testing.T) {
 	}
 
 	var mockedInput = map[int]interface{}{}
-	var executedInvokeCount int
 
 	// act
 	steps, err := cloudaccountdeployment.FlushTrack(logger, "logging")
@@ -138,8 +136,6 @@ func TestFlushTrack_ShouldReportAllStepsInSingleTrack(t *testing.T) {
 	require.NoError(t, err)
 	require.NotEmpty(t, steps)
 
-	// invoke lambda 3 times
-	require.Equal(t, 3, executedInvokeCount)
 	// ensure result and accountstepdeploymentid are correct
 	for _, v := range mockedInput {
 		require.IsType(t, cloudaccountdeployment.UpdateRegionalStatusPayload{}, v)
