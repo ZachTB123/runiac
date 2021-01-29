@@ -1,12 +1,13 @@
 
 # runiac - Run IaC Anywhere With Ease
 
-![build](https://github.com/optum/runiac/workflows/build/badge.svg?branch=main)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/optum/runiac/graphs/commit-activity)
+![build](https://github.com/optum/runiac/workflows/build/badge.svg?branch=main)
 [![Github all releases](https://img.shields.io/github/downloads/optum/runiac/total.svg)](https://GitHub.com/optum/runiac/releases/)
-[![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 
-<a href="https://cla-assistant.io/Optum/runiac"><img src="https://cla-assistant.io/readme/badge/Optum/runiac" alt="CLA assistant" /></a>
+[comment]: <> (<a href="https://cla-assistant.io/Optum/runiac"><img src="https://cla-assistant.io/readme/badge/Optum/runiac" alt="CLA assistant" /></a>)
+
+[![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 
 
 ![](./logo.jpg)
