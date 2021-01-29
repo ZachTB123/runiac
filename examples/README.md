@@ -4,8 +4,8 @@ This directory contains several example projects that you can use as a starting 
 
 ## Index
 
-* [azure](azure-hello-world/): deploy infrastructure to Microsoft Azure
-* [gcp](gcp-hello-world/): deploy infrastructure to Google Cloud Platform
+* [azure](terraform-azure-hello-world/): deploy infrastructure to Microsoft Azure
+* [gcp](terraform-gcp-hello-world/): deploy infrastructure to Google Cloud Platform
 
 ## Common Requirements
 
