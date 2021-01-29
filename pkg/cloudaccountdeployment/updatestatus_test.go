@@ -69,14 +69,12 @@ func TestFlushTracks_ShouldReturnCorrectSuccessesWithMultipleTracks(t *testing.T
 
 	// reset mockedinput after setup
 	mockedInput = map[int]interface{}{}
-	executedInvokeCount = 0
 
 	flushedTrack := stubTrackPrefix + "0"
 	steps, err := cloudaccountdeployment.FlushTrack(logger, flushedTrack)
 
 	require.NoError(t, err)
 	require.NotEmpty(t, steps)
-	require.Equal(t, stubStepCount, executedInvokeCount)
 
 	for _, v := range mockedInput {
 		require.IsType(t, cloudaccountdeployment.UpdateRegionalStatusPayload{}, v)
